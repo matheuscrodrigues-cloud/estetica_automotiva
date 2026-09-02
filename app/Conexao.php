@@ -9,18 +9,15 @@ class Conexao {
                 $host = 'localhost';
                 $db   = 'estetica_automotiva';
                 $user = 'root';
-                $pass = ''; // Altere aqui se o seu MySQL tiver senha
+                $pass = '';
 
-                // Conexão com o servidor MySQL
                 self::$instance = new PDO("mysql:host=$host;charset=utf8mb4", $user, $pass);
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-                // Cria o banco de dados se não existir
                 self::$instance->exec("CREATE DATABASE IF NOT EXISTS `$db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
                 self::$instance->exec("USE `$db`;");
 
-                // Cria tabela de usuários
                 self::$instance->exec("CREATE TABLE IF NOT EXISTS usuarios (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     nome VARCHAR(100) NOT NULL,
@@ -28,7 +25,6 @@ class Conexao {
                     senha VARCHAR(255) NOT NULL
                 )");
 
-                // Cria tabela de agendamentos com TODAS as colunas necessárias
                 self::$instance->exec("CREATE TABLE IF NOT EXISTS agendamentos (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     usuario_id INT,
@@ -41,7 +37,7 @@ class Conexao {
                 )");
 
             } catch (PDOException $e) {
-                die("Erro na conexão com o banco de dados MySQL: " . $e->getMessage());
+                die("Erro na conexao: " . $e->getMessage());
             }
         }
 

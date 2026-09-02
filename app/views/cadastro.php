@@ -2,32 +2,39 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Estética Automotiva</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 50px; }
-        .box { background: #fff; padding: 20px; width: 300px; margin: 0 auto; border: 1px solid #ccc; }
-        h2 { text-align: center; }
-        input { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: green; color: white; border: none; cursor: pointer; }
-        a { display: block; text-align: center; margin-top: 10px; color: blue; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="box">
-        <h2>Criar Conta</h2>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4 text-primary">Criar Conta</h2>
+        
         <form method="POST" action="../../index.php?acao=cadastrar">
-            <label>Nome:</label>
-            <input type="text" name="nome" required>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" id="nome" name="nome" class="form-control" required placeholder="Seu nome completo">
+            </div>
 
-            <label>E-mail:</label>
-            <input type="email" name="email" required>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" id="email" name="email" class="form-control" required placeholder="seu@email.com">
+            </div>
 
-            <label>Senha:</label>
-            <input type="password" name="senha" required>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha:</label>
+                <input type="password" id="senha" name="senha" class="form-control" required placeholder="Sua senha">
+            </div>
 
-            <button type="submit">Cadastrar</button>
+            <button type="submit" class="btn btn-success w-100 mb-3">Cadastrar</button>
         </form>
-        <a href="../../index.php">Já tenho conta (Voltar)</a>
+        
+        <div class="text-center">
+            <a href="../../index.php" class="text-decoration-none">Já tenho conta (Voltar)</a>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

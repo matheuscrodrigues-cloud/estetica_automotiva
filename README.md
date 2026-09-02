@@ -3,6 +3,13 @@
 ## Visão Geral do Projeto
 Aplicação web Full-Stack desenvolvida em PHP para gestão e agendamento de serviços de estética automotiva (lavagens, polimentos e higienizações).
 
+## Tecnologias Utilizadas
+* **Back-End:** PHP 8.2+ (Arquitetura MVC com PDO)
+* **Banco de Dados:** MySQL
+* **Front-End:** HTML5, CSS3 e Bootstrap 5
+* **Servidor Local:** Laravel Herd / XAMPP
+* **Versionamento:** Git e GitHub
+
 ## Requisitos Funcionais (RF)
 * **RF01:** O sistema deve permitir o cadastro de novos usuários.
 * **RF02:** O sistema deve permitir o login e autenticação de usuários cadastrados.
@@ -13,6 +20,6 @@ Aplicação web Full-Stack desenvolvida em PHP para gestão e agendamento de ser
 
 ## Requisitos Não Funcionais (RNF)
 * **RNF01:** A senha do usuário deve ser armazenada de forma criptografada usando `password_hash`.
-* **RNF02:** O sistema deve utilizar banco de dados relacional MySQL.
-* **RNF03:** A interface deve ser simples, funcional e desenvolvida em HTML5 e CSS3.
-* **RNF04:** O código Back-End deve ser estruturado em PHP (versão 8.3 ou superior).
+* **RNF02:** O sistema deve utilizar banco de dados relacional MySQL via extensão PDO.
+* **RNF03:** A interface deve ser responsiva e estilizada utilizando a biblioteca Bootstrap 5.
+* **RNF04:** O código Back-End deve ser estruturado em PHP (versão 8.2 ou superior).

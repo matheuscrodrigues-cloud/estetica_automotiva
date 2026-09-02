@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/app/conexao.php';
+require_once __DIR__ . '/app/Conexao.php';
 
 $db = Conexao::getConexao();
 $acao = $_GET['acao'] ?? 'login';
@@ -17,7 +17,7 @@ if ($acao === 'cadastrar' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Conta criada com sucesso!'); window.location.href='index.php';</script>";
         exit;
     } catch (PDOException $e) {
-        echo "<script>alert('Erro: E-mail ja cadastrado!'); window.location.href='app/views/cadastro.php';</script>";
+        echo "<script>alert('Erro: E-mail ja cadastrado!'); window.location.href='index.php?acao=tela_cadastro';</script>";
         exit;
     }
 }
@@ -88,7 +88,7 @@ if ($acao === 'sair') {
     exit;
 }
 
-// Tela do Painel
+// Renderizacao das Views
 if ($acao === 'dashboard') {
     if (!isset($_SESSION['usuario_id'])) {
         header("Location: index.php");
@@ -100,6 +100,8 @@ if ($acao === 'dashboard') {
     $agendamentos = $stmt->fetchAll();
 
     require_once __DIR__ . '/app/views/dashboard.php';
+} elseif ($acao === 'tela_cadastro') {
+    require_once __DIR__ . '/app/views/cadastro.php';
 } else {
     require_once __DIR__ . '/app/views/login.php';
 }

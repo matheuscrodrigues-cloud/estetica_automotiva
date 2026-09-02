@@ -28,10 +28,12 @@ class Conexao {
                     senha VARCHAR(255) NOT NULL
                 )");
 
-                // Cria tabela de agendamentos
+                // Cria tabela de agendamentos com TODAS as colunas necessárias
                 self::$instance->exec("CREATE TABLE IF NOT EXISTS agendamentos (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     usuario_id INT,
+                    cliente_nome VARCHAR(100) NOT NULL,
+                    veiculo VARCHAR(100) NOT NULL,
                     servico VARCHAR(100) NOT NULL,
                     data_agendamento DATE NOT NULL,
                     horario TIME NOT NULL,

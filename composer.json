@@ -1,0 +1,11 @@
+{
+    "name": "estetica/automotiva",
+    "description": "Sistema de Gestão de Estética Automotiva",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}

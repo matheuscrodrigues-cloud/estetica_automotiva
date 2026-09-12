@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class Conexao {
     private static $instancia = null;

@@ -13,7 +13,7 @@ Aplicação web Full-Stack desenvolvida em PHP para gestão e agendamento de ser
 
 ## Requisitos Funcionais (RF)
 * **RF01:** O sistema deve permitir o cadastro de novos usuários.
-* **RF02:** O sistema deve permitir o login e autenticação de usuários cadastrados.
+* **RF02:** O sistema deve permitir o login e autenticação de usuários cadastrados.gu
 * **RF03:** O sistema deve permitir o agendamento de serviços automotivos com data e horário.
 * **RF04:** O sistema deve listar todos os agendamentos vinculados ao usuário logado.
 * **RF05:** O sistema deve permitir a exclusão de agendamentos.
@@ -24,16 +24,3 @@ Aplicação web Full-Stack desenvolvida em PHP para gestão e agendamento de ser
 * **RNF02:** O sistema deve utilizar banco de dados relacional MySQL via extensão PDO.
 * **RNF03:** A interface deve ser responsiva e estilizada utilizando a biblioteca Bootstrap 5.
 * **RNF04:** O código Back-End deve ser estruturado em PHP (versão 8.2 ou superior).
-
-## Arquitetura e Estrutura de Diretórios
-```text
-estetica_automotiva/
-├── config/          # Configurações globais e conexão PDO (Conexao.php)
-├── model/           # Regras de negócio e manipulação de dados (Agendamento.php)
-├── views/           # Interface do usuário (login.php, cadastro.php, dashboard.php)
-├── vendor/          # Dependências gerenciadas pelo Composer (Autoload)
-├── .gitignore       # Arquivos e pastas ignorados pelo versionamento
-├── composer.json    # Mapeamento de dependências e namespaces do projeto
-├── composer.lock    # Trava de versões das dependências do Composer
-├── index.php        # Ponto de entrada da aplicação e roteador central
-└── README.md        # Documentação técnica do projeto
